@@ -1,6 +1,9 @@
-﻿using CQRS.CleanArchitecture.Starter.Core.Domain.Entities;
+﻿using CQRS.CleanArchitecture.Starter.Core.Domain.Common;
+using CQRS.CleanArchitecture.Starter.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence
 {
@@ -179,6 +182,23 @@ namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence
                 OrderPlaced = DateTime.Now,
                 UserId = Guid.Parse("{7AEB2C01-FE8E-4B84-A5BA-330BDF950F5C}")
             });
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.Entity.CreatedDate = DateTime.Now;
+                        break;
+                    case EntityState.Modified:
+                        entry.Entity.LastModifiedDate = DateTime.Now;
+                        break;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }
