@@ -11,6 +11,8 @@ namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence.Configuratio
         {
             builder.Property(e => e.Name)
                    .IsRequired();
+            builder.Property(e => e.CreatedDate)
+                   .HasDefaultValueSql("getutcdate()");
         }
     }
 }

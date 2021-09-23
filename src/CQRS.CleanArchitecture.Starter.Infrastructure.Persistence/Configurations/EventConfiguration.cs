@@ -11,8 +11,8 @@ namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence.Configuratio
             builder.Property(e => e.Name)
                    .IsRequired()
                    .HasMaxLength(50);
-            builder.Property(e => e.ImageUrl)
-                   .IsRequired(false);
+            builder.Property(e => e.CreatedDate)
+                   .HasDefaultValueSql("getutcdate()");
         }
     }
 }

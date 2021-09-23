@@ -2,6 +2,7 @@
 using CQRS.CleanArchitecture.Starter.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,6 +22,10 @@ namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence
         // This method is called by the framework when your context is first created to build the model and its mappings in memory.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // This line will search for all model configuration classes inherited from IEntityTypeConfiguration
+            // Our model confugrations classes are under "CQRS.CleanArchitecture.Starter.Infrastructure.Persistence\\Configurations\\" folder
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
             //seed data, added through migrations
             var concertGuid = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}");
             var musicalGuid = Guid.Parse("{6313179F-7837-473A-A4D5-A5571B43E6A6}");
