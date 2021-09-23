@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CQRS.CleanArchitecture.Starter.Core.Application\CQRS.CleanArchitecture.Starter.Core.Application.csproj" />
     <ProjectReference Include="..\CQRS.CleanArchitecture.Starter.Core.Domain\CQRS.CleanArchitecture.Starter.Core.Domain.csproj" />
   </ItemGroup>
 
