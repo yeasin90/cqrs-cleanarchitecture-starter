@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence
 {
-    public static class InfrastrcutureLayerRegistration
+    public static class InfrastrcuturePersistenceRegistration
     {
         public static IServiceCollection AddInfrastrcutureLayerServices(this IServiceCollection services, IConfiguration configuration)
         {
