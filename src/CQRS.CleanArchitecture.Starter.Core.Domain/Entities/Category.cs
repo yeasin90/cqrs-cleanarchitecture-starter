@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CQRS.CleanArchitecture.Starter.Core.Domain.Common;
+using System;
 using System.Collections.Generic;
 
 namespace CQRS.CleanArchitecture.Starter.Core.Domain.Entities
 {
-    public class Category
+    public class Category : AuditableEntity
     {
         public Guid CategoryId { get; set; }
         public string Name { get; set; }

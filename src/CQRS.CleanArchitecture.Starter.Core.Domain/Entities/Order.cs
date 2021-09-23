@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CQRS.CleanArchitecture.Starter.Core.Domain.Common;
+using System;
 
 namespace CQRS.CleanArchitecture.Starter.Core.Domain.Entities
 {
-    public class Order
+    public class Order : AuditableEntity
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }

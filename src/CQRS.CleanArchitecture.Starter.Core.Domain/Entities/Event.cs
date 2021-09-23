@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CQRS.CleanArchitecture.Starter.Core.Domain.Common;
+using System;
 
 namespace CQRS.CleanArchitecture.Starter.Core.Domain.Entities
 {
-    public class Event
+    public class Event : AuditableEntity
     {
         public Guid EventId { get; set; }
         public string Name { get; set; }
