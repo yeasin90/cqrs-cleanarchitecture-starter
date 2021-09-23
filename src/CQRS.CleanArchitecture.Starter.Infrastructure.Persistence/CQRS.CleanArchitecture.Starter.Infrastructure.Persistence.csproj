@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CQRS.CleanArchitecture.Starter.Core.Domain\CQRS.CleanArchitecture.Starter.Core.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
