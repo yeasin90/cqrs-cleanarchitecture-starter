@@ -1,3 +1,4 @@
+using CQRS.CleanArchitecture.Starter.Infrastructure.Infrastructure;
 using CQRS.CleanArchitecture.Starter.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +21,7 @@ namespace CQRS.CleanArchitecture.Starter.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastrcutureLayerServices(Configuration);
+            services.AddInfrastructureServices(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

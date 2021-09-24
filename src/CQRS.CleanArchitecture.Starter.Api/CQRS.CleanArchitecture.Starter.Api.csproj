@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CQRS.CleanArchitecture.Starter.Infrastructure.Infrastructure\CQRS.CleanArchitecture.Starter.Infrastructure.Infrastructure.csproj" />
     <ProjectReference Include="..\CQRS.CleanArchitecture.Starter.Infrastructure.Persistence\CQRS.CleanArchitecture.Starter.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 

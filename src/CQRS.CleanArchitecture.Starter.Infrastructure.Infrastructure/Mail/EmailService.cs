@@ -1,5 +1,7 @@
 ﻿using CQRS.CleanArchitecture.Starter.Core.Application.Contracts.Infrastructure;
 using CQRS.CleanArchitecture.Starter.Core.Application.Models.Mail;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
