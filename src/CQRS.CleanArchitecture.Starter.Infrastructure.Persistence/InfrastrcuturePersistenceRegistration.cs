@@ -8,7 +8,7 @@ namespace CQRS.CleanArchitecture.Starter.Infrastructure.Persistence
 {
     public static class InfrastrcuturePersistenceRegistration
     {
-        public static IServiceCollection AddInfrastrcutureLayerServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastrcuturePersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<CqrsStarterDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("CqrsStarterConnectionString")));

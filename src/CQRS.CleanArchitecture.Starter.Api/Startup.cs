@@ -20,7 +20,7 @@ namespace CQRS.CleanArchitecture.Starter.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddInfrastrcutureLayerServices(Configuration);
+            services.AddInfrastrcuturePersistenceServices(Configuration);
             services.AddInfrastructureServices(Configuration);
         }
 
