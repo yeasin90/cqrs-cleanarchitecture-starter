@@ -1,5 +1,7 @@
 ﻿using CQRS.CleanArchitecture.Starter.Core.Application.Contracts.Infrastructure;
 using CQRS.CleanArchitecture.Starter.Core.Application.Models.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 
 namespace CQRS.CleanArchitecture.Starter.Infrastructure.Infrastructure.Mail
