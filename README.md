@@ -1,7 +1,20 @@
 # CQRS CleanArchitecture Starter
-A simple project to understand how CQRS pattern works with CleanArchitecture. Some basic CRUD operations has been implements using CQRS-CleanArchitecture. Each operation has been exposed as a REST API end pointsfrom controllers. Every project in this solution was created with ASP.NET Core 3.1 Empty Template. Sql Server localDB has been used with EF-Core for database, so you don't need to install any Sql server separately. 
+A simple project to understand how CQRS pattern works with CleanArchitecture. I liked this architecture because:
+- Let's you to organize the project as per feature
+- Mitigates circular dependency (which is very common in layerd architecture)
+- Scalable
 
-Features:
+Some basic CRUD operations has been implements using CQRS-CleanArchitecture. Each operation has been exposed as a REST API. Every project in this solution was created with ASP.NET Core 3.1 Empty Template. 
+
+### Features:
+- Clean Architecture implementation
+- Basic CRUD operation using CQRS
+- API to handler communications using MediatR
+- Validations using FluentValidation
+- Exception handling using MiddleWare
+- API response using custom base class
+- EF-Core with LocalDB (you don't need to install any Sql server separately)
+- Swagger
 
 ### How to run the project:
 - Clone and build the repo
