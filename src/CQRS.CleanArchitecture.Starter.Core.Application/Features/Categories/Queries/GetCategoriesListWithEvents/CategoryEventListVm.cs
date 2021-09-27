@@ -5,7 +5,7 @@ namespace CQRS.CleanArchitecture.Starter.Core.Application.Features.Categories.Qu
 {
     public class CategoryEventListVm
     {
-        public Guid CategoryId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public ICollection<CategoryEventDto> Events { get; set; }
     }

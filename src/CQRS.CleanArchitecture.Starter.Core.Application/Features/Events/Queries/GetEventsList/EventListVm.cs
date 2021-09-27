@@ -4,7 +4,7 @@ namespace CQRS.CleanArchitecture.Starter.Core.Application.Features.Events.Querie
 {
     public class EventListVm
     {
-        public Guid EventId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string ImageUrl { get; set; }

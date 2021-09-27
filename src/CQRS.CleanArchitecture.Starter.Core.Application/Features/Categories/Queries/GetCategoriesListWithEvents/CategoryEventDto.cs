@@ -4,7 +4,7 @@ namespace CQRS.CleanArchitecture.Starter.Core.Application.Features.Categories.Qu
 {
     public class CategoryEventDto
     {
-        public Guid EventId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
         public string Artist { get; set; }

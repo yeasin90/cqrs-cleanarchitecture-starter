@@ -4,7 +4,7 @@ namespace CQRS.CleanArchitecture.Starter.Core.Application.Features.Events.Querie
 {
     public class EventExportDto
     {
-        public Guid EventId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
     }

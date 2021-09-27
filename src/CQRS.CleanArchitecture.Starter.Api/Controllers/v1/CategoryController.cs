@@ -1,6 +1,7 @@
 ﻿using CQRS.CleanArchitecture.Starter.Core.Application.Features.Categories.Commands.CreateCateogry;
 using CQRS.CleanArchitecture.Starter.Core.Application.Features.Categories.Queries.GetCategoriesList;
 using CQRS.CleanArchitecture.Starter.Core.Application.Features.Categories.Queries.GetCategoriesListWithEvents;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,14 +11,15 @@ namespace CQRS.CleanArchitecture.Starter.Api.Controllers.v1
     /// <summary>
     /// More about API routing verbs: https://www.c-sharpcorner.com/article/routing-in-restful-apis-using-net-core/
     /// </summary>
-    [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class CategoryController : Controller
+    public class CategoryController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly IMediator _mediator;
+
+        public CategoryController(IMediator mediator)
         {
-            return View();
+            _mediator = mediator;
         }
 
         [HttpGet("all")]
@@ -37,7 +39,7 @@ namespace CQRS.CleanArchitecture.Starter.Api.Controllers.v1
         }
 
         [HttpPost]
-        public async Task<ActionResult<CreateCategoryCommandResponse>> Create([FromBody] CreateCategoryCommand createCategoryCommand)
+        public async Task<ActionResult<CreateCategoryCommandResponse>> Create(CreateCategoryCommand createCategoryCommand)
         {
             var response = await _mediator.Send(createCategoryCommand);
             return Ok(response);

@@ -1,9 +1,8 @@
- using CQRS.CleanArchitecture.Starter.Core.Application;
+using CQRS.CleanArchitecture.Starter.Core.Application;
 using CQRS.CleanArchitecture.Starter.Infrastructure.Infrastructure;
 using CQRS.CleanArchitecture.Starter.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,15 +21,6 @@ namespace CQRS.CleanArchitecture.Starter.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationServices();
-            services.AddInfrastrcuturePersistenceServices(Configuration);
-            services.AddInfrastructureServices(Configuration);
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-            });
-
             services.AddApiVersioning(config =>
             {
                 // Specify the default API Version as 1.0
@@ -40,6 +30,17 @@ namespace CQRS.CleanArchitecture.Starter.Api
                 // Advertise the API versions supported for the particular endpoint
                 config.ReportApiVersions = true;
             });
+
+            services.AddApplicationServices();
+            services.AddInfrastrcuturePersistenceServices(Configuration);
+            services.AddInfrastructureServices(Configuration);
+
+            services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            }); 
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
