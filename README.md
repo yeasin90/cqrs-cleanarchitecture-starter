@@ -1,4 +1,5 @@
 # CQRS CleanArchitecture Starter
+Every project in this solution was created with ASP.NET Core 3.1 Empty Template
 
 ### Nugets:
 - AutoMapper
