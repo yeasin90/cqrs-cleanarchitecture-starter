@@ -53,7 +53,7 @@ namespace CQRS.CleanArchitecture.Starter.Api
             // Check: https://www.appmarq.com/public/security,1043066,Always-use-HTTPS-Redirection-Middleware-and-HSTS-Middleware-in-your-ASPNET-Core-application
             app.UseHttpsRedirection();
             app.UseRouting();
-
+            app.UseCors("Open");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
