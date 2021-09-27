@@ -1,4 +1,22 @@
 # CQRS CleanArchitecture Starter
+Every project in this solution was created with ASP.NET Core 3.1 Empty Template
+
+### Nugets:
+- AutoMapper
+- AutoMapper.Extensions.Microsoft.DependencyInjection
+- FluentValidation
+- FluentValidation.DependencyInjectionExtensions
+- MediatR 
+- MediatR.Extensions.Microsoft.Dependency 
+- Microsoft.AspNetCore.Mvc.Versioning
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.Extensions.DependencyInjection
+- Microsoft.Extensions.Logging
+- Microsoft.Extensions.Logging.Abstractions
+- Microsoft.Extensions.Options.ConfigurationExtension
+- SendGrid
+- CsvHelper
 
 ### Example endpoints:
 Category: 
@@ -9,9 +27,6 @@ Category:
 Events: 
 - https://localhost:5001/api/v1/events/all
 - https://localhost:5001/api/v1/events/{id} (GET)
-
-### Project structure relation in terms of Architecture: 
-![cqrs-relation](https://user-images.githubusercontent.com/8789577/134537967-07dcf42f-1085-474b-a11e-97ec2f966973.JPG)
 
 ### Remove exisitng migrations: 
 https://stackoverflow.com/a/50657539/2672014
