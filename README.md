@@ -17,6 +17,8 @@ Every project in this solution was created with ASP.NET Core 3.1 Empty Template
 - Microsoft.Extensions.Options.ConfigurationExtension
 - SendGrid
 - CsvHelper
+- Swashbuckle.AspNetCore
+- Swashbuckle.AspNetCore.Swagger
 
 ### Example endpoints:
 Category: 
