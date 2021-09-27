@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using CQRS.CleanArchitecture.Starter.Api.Utility;
+using CQRS.CleanArchitecture.Starter.Api.Middleware;
 
 namespace CQRS.CleanArchitecture.Starter.Api
 {
@@ -79,6 +80,7 @@ namespace CQRS.CleanArchitecture.Starter.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CQRS Starter");
             });
+            app.UseCustomExceptionHandler();
             app.UseCors("Open");
             app.UseEndpoints(endpoints =>
             {
