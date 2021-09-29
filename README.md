@@ -45,6 +45,7 @@ Events:
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Tools
 - Microsoft.Extensions.DependencyInjection
+- Microsoft.Extensions.Configuration
 - Microsoft.Extensions.Logging
 - Microsoft.Extensions.Logging.Abstractions
 - Microsoft.Extensions.Options.ConfigurationExtension
